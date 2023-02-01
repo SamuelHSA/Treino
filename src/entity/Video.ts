@@ -13,6 +13,6 @@ export class Video {
     url: string
 
     @ManyToOne(() => Room, room => room.videos)
-    @JoinColumn({name: 'room_id'})
+    @JoinColumn({ name: 'room_id' })
     room: Room
 }

@@ -1,7 +1,8 @@
-import { AppDataSource } from "./data-source"
-import { Room } from "./entity/Room"
+import { AppDataSource } from "./data-source";
 import 'reflect-metadata';
-import express from 'express'
+// import express from 'express';
+const express = require('express')
+
 
 AppDataSource.initialize().then(async () => {
     const app = express();
