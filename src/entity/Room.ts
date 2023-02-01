@@ -1,18 +1,15 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import { Video } from "./video";
 
-@Entity('user')
-export class User {
+@Entity('room ')
+export class Room {
 
         @PrimaryGeneratedColumn()
         id: number
 
-        @Column()
+        @Column({ type: 'text' })
         name: string
 
-        @Column()
-        email: string
-
-        @Column()
-        password: string
-
+        @OneToMany(() => Video, video => video.room)
+        videos: Video[]
     }

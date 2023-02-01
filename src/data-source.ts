@@ -1,6 +1,6 @@
+import 'dotenv/config'
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import { Room } from "./entity/Room"
 
 export const AppDataSource = new DataSource({
     type: "mysql",
@@ -10,6 +10,6 @@ export const AppDataSource = new DataSource({
     password: "root1",
     database: "scoder",
     entities: [`${__dirname}/**/entity/*.{ts,js}`],
-    migrations: [`${__dirname}/**/migration/*.{ts,js}`],
+    migrations: [`${__dirname}/**/migrations/*.{ts,js}`],
     subscribers: [],
 });
