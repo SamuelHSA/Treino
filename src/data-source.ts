@@ -9,7 +9,11 @@ export const AppDataSource = new DataSource({
     username: "root",
     password: "root1",
     database: "scoder",
-    entities: [`${__dirname}/**/entity/*.{ts,js}`],
-    migrations: [`${__dirname}/**/migrations/*.{ts,js}`],
+    entities: [`${__dirname}/**/entity/*.{js,ts}`],
+    migrations: [`${__dirname}/**/migrations/*.{js,ts}`],
     subscribers: [],
 });
+
+AppDataSource.initialize().then(async () => {
+    console.log("Connection initialized with database...");
+  }).catch((error) => console.log(error));
